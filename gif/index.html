@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zainab's Animated Header</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #0d1116; }
+        #particles-js {
+            width: 800px;
+            height: 387px;
+            background-color: #0d1116;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #00bfff;
+            opacity: 0.9;
+        }
+        #typewriter, #typewriter2 {
+            position: absolute;
+            left: 50%; transform: translateX(-50%);
+            color: #fff;
+            text-align: center;
+            font-family: 'Roboto', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+            font-weight: 500;
+            z-index: 1;
+            max-width: 760px;
+            white-space: normal;
+            word-break: break-word;
+        }
+        #typewriter {
+            top: 45%; transform: translate(-50%, -60px);
+            font-size: 2.5rem; line-height: 3rem;
+            background: -webkit-linear-gradient(#00bfff, #0080ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }.no-gradient {
+            background: none !important;
+            -webkit-text-fill-color: #00bfff !important;
+        }
+        #typewriter2 {
+            top: 55%; transform: translate(-50%, 20px);
+            font-size: 1.4rem; line-height: 2rem;
+            background: -webkit-linear-gradient(#00bfff, #0080ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="typewriter"></div>
+    <div id="typewriter2"></div>
+    <div id="particles-js"></div>
+
+    <!-- Load Particles.js engine -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles background
+        particlesJS.load('particles-js', 'particles.json', () => console.log('particles config loaded'));
+
+        // Primary header: looping, emojis, concise text
+        new Typewriter('#typewriter', { loop: true, delay: 20, })
+            .typeString('Hey! I\u2019m Zainab')
+            .pauseFor(4000)
+            .deleteAll(10)
+            .typeString('3rd-year CSE undergrad @ IIT Gandhinagar')
+            .pauseFor(4000)
+            .deleteAll(10)
+            .typeString('Systems Development & Computer Vision enthusiast')
+            .pauseFor(3000)
+            .deleteAll(10)
+            .typeString('Let\u2019s Connect!')
+            .pauseFor(4000)
+            .start();
+
+        // Secondary header lines
+        new Typewriter('#typewriter2', { loop: true, delay: 20, }).pauseFor(1000)
+            .typeString('Nice to meet you.')
+            .pauseFor(2000)
+            .deleteAll(10)
+            .pauseFor(2000)
+            .typeString('Passionate about technology and innovation ')
+            .pauseFor(2000)
+            .deleteAll(10)
+            .typeString('Building a custom Linux window manager')
+            .pauseFor(3000)
+            .deleteAll(10)
+            .typeString('linkedin.com/in/kapadiazainab')
+            .pauseFor(4000)
+            .start();
+    </script>
+</body>
+</html>
